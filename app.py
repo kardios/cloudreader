@@ -6,6 +6,7 @@ from pypdf import PdfReader
 
 # Retrieve the API keys from the environment variables
 CLAUDE_API_KEY = os.environ["ANTHROPIC_API_KEY"]
+anthropic = Anthropic(api_key=CLAUDE_API_KEY)
 st.set_page_config(page_title="Cloudreader", page_icon=":sunglasses:",)
 st.write("**Cloudreader**, your AI reading and ideation assistant")
 
