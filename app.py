@@ -85,4 +85,3 @@ if raw_text.strip() != "":
   container.write(Option_Action)
   container.write(output_text)
   container.write("Time to generate: " + str(round(end-start,2)) + " seconds")
-  container.write(response.usage)
