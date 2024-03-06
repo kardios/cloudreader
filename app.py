@@ -65,10 +65,10 @@ if raw_text.strip() != "":
   try:
     with st.spinner("Running AI model..."):
       start = time.time()
-      input = "Below is the input:\n\n" + raw_text
+      input = instruction + "\n\nBelow is the input:\n\n" + raw_text
       message = anthropic.messages.create(
         model = model_id,
-        max_tokens = 1000,
+        max_tokens = 500,
         temperature = 0,
         system = "",
         messages=[
