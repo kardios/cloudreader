@@ -62,28 +62,25 @@ elif Option_Input == "Enter free text":
     raw_text = input_text
 
 if raw_text.strip() != "":
-  try:
-    with st.spinner("Running AI model..."):
-      start = time.time()
-      input = instruction + "\n\nBelow is the input:\n\n" + raw_text
-      message = anthropic.messages.create(
-        model = model_id,
-        max_tokens = 500,
-        temperature = 0,
-        system = "",
-        messages=[
-          {
-            "role": "user",
-            "content": [{"type": "text","text": input}]
-          }
-        ]
-      )
-      output_text = message.content[0].text
+  with st.spinner("Running AI model..."):
+    start = time.time()
+    input = instruction + "\n\nBelow is the input:\n\n" + raw_text
+    message = anthropic.messages.create(
+      model = model_id,
+      max_tokens = 500,
+      temperature = 0,
+      system = "",
+      messages=[
+        {
+          "role": "user",
+          "content": [{"type": "text","text": input}]
+        }
+      ]
+    )
+    output_text = message.content[0].text
     
-    container = st.container(border=True)
-    container.write(Option_Action)
-    container.write(output_text)
-    container.write("Time to generate: " + str(round(end-start,2)) + " seconds")
-    container.write(response.usage)
-  except:
-    st.error(" You have encountered an error!", icon="🚨")
+  container = st.container(border=True)
+  container.write(Option_Action)
+  container.write(output_text)
+  container.write("Time to generate: " + str(round(end-start,2)) + " seconds")
+  container.write(response.usage)
