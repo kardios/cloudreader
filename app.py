@@ -79,7 +79,8 @@ if raw_text.strip() != "":
       ]
     )
     output_text = message.content[0].text
-    
+    end = time.time()
+  
   container = st.container(border=True)
   container.write(Option_Action)
   container.write(output_text)
