@@ -16,7 +16,7 @@ with st.expander("Click to read documentation"):
   st.write("- Productivity app by **Sherwood Analytica**")
   st.write("- Upload a PDF or enter free text as input")
   st.write("- Generate bullet point summary of input") 
-  st.write("- Use Claude 3 Sonnet or Claude 3 Opus") 
+  st.write("- Use Claude 3 Haiku, Sonnet or Opus models") 
   st.write("- :red[**Answers may not be suitable or accurate**]")
   st.write("- :blue[**Try reloading webpage to troubleshoot**]")
 
