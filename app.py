@@ -10,10 +10,7 @@ anthropic = Anthropic(api_key=CLAUDE_API_KEY)
 st.set_page_config(page_title="Cloudreader", page_icon=":sunglasses:",)
 st.write("**Cloudreader**, your AI reading and ideation assistant")
 
-if st.toggle("Toggle Opus :robot_face: Quality over Speed"):
-  model_id = "claude-3-opus-20240229"
-else:
-  model_id = "claude-3-sonnet-20240229"
+model_id = st.selectbox("Which Claude 3 model to use?", ('claude-3-haiku-20240307', 'claude-3-sonnet-20240229', 'claude-3-opus-20240229'))
 
 with st.expander("Click to read documentation"):
   st.write("- Productivity app by **Sherwood Analytica**")
